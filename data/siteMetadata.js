@@ -6,7 +6,7 @@ const siteMetadata = {
   description: 'Turning complexity into clarity, one stack at a time.',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://stacked-asmita-blog.vercel.app/',
+  siteUrl: 'https://stacked-asmita-blog.vercel.app',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
   email: 'as20428@nyu.edu',
