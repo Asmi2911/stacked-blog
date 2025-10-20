@@ -8,9 +8,7 @@ import Image from '@/components/Image'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 
-
 const editUrl = () => siteMetadata.siteRepo
-
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: 'long',
@@ -95,7 +93,6 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
                 <Link href={editUrl()}>View on GitHub</Link>
               </div>
-            
             </div>
             <footer>
               <div className="divide-gray-200 text-sm leading-5 font-medium xl:col-start-1 xl:row-start-2 xl:divide-y dark:divide-gray-700">

@@ -53,7 +53,6 @@ const siteMetadata = {
     // Select a provider and use the environment variables associated to it
     // https://vercel.com/docs/environment-variables
     provider: '', // supported providers: giscus, utterances, disqus
-    
   },
   search: {
     provider: 'kbar', // kbar or algolia

@@ -19,7 +19,7 @@ export default function AuthorLayout({ children, content }: Props) {
             About
           </h1>
         </div>
-        <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
+        <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:space-y-0 xl:gap-x-8">
           <div className="flex flex-col items-center space-x-2 pt-8">
             {avatar && (
               <Image
@@ -29,9 +29,9 @@ export default function AuthorLayout({ children, content }: Props) {
                 height={220}
                 //className="rounded-full object-contain ring-2 ring-gray-200 dark:ring-gray-700 shadow-lg bg-white p-1"
                 //style={{ aspectRatio: '1 / 1', objectPosition: 'top' }}
-                className="object-cover rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
-                style={{ objectPosition: 'center top 1%', }}
-                          priority
+                className="rounded-xl object-cover shadow-md transition-all duration-300 hover:shadow-xl"
+                style={{ objectPosition: 'center top 1%' }}
+                priority
               />
             )}
             <h3 className="pt-4 pb-2 text-2xl leading-8 font-bold tracking-tight">{name}</h3>
