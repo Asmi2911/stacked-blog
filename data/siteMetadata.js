@@ -6,14 +6,14 @@ const siteMetadata = {
   description: 'Turning complexity into clarity, one stack at a time.',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://your-project.vercel.app',
+  siteUrl: 'https://stacked-asmita-blog.vercel.app/',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
   email: 'as20428@nyu.edu',
   github: 'https://github.com/Asmi2911',
   linkedin: 'https://www.linkedin.com/in/asmita2911/',
   instagram: 'https://www.instagram.com/asmitassonavane/',
-  siteRepo: 'https://github.com/Asmi2911',
+  siteRepo: 'https://github.com/Asmi2911/stacked-blog',
 
   locale: 'en-US',
   // set to true if you want a navbar fixed to the top
