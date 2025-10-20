@@ -1,0 +1,65 @@
+---
+title: "RAG That Actually Works: Hybrid Search, Chunking, and Real-World Retrieval"
+date: "2025-09-15"
+lastmod: "2025-03-15"
+tags: ["AI", "retrieval", "search", "NLP"]
+draft: false
+summary: "Retrieval-Augmented Generation often fails quietly. Here’s what makes it reliable — from semantic chunking to hybrid search and reranking pipelines that scale."
+images: ["/static/images/rag.png"]
+---
+
+## Introduction
+
+Retrieval-Augmented Generation (RAG) promised accuracy through grounding — yet most real deployments underperform.  
+The culprit is rarely the model. It’s almost always **retrieval**.
+
+This post outlines the practical design patterns that separate a prototype from a production-grade RAG system.
+
+---
+
+## The Anatomy of a Working RAG Stack
+
+![RAG overview](/static/images/rag.png)
+
+### 1. Smart Chunking
+
+Chunking is not just splitting text.  
+Combine **semantic windows** (context-aware embeddings) with **structural cues** like headings and lists.  
+This balance preserves topic coherence without overwhelming the model’s context window.
+
+### 2. Hybrid Search
+
+Hybrid retrieval blends **dense vector search** (semantic) and **sparse search** (BM25).  
+Dense handles paraphrase; BM25 handles precision and uncommon terms.  
+Together, they create a safety net for long-tail queries.
+
+### 3. Reranking and Query Rewriting
+
+- **Rerank** top-K candidates using a cross-encoder to reorder by true relevance.  
+- **Rewrite queries** with synonym expansion, acronym resolution, and context normalisation.
+
+### 4. Token Budget Discipline
+
+Good retrieval minimises waste.  
+De-duplicate near-identical chunks and limit context to the **Pareto knee** — the point where accuracy gains flatten while cost rises steeply.
+
+---
+
+## Evaluating What Matters
+
+Judge RAG not only by whether it answers correctly, but **why**.  
+Track two metrics in tandem:
+- **Document Recall** — the retriever’s coverage.
+- **Faithfulness** — the generator’s adherence to sources.
+
+A system that scores high on both is not just accurate — it’s **trustworthy**.
+
+---
+
+## Reflection
+
+In 2025, RAG is no longer novel — it’s infrastructure.  
+The difference lies in how thoughtfully we design it.
+
+True progress in retrieval isn’t about complexity.  
+It’s about **clarity of intent** — every component serving the simple goal: *ground truth that stays grounded.*

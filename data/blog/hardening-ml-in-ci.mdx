@@ -1,0 +1,59 @@
+---
+title: "Hardening ML in CI: Reproducibility, Provenance, and Trust by Design"
+date: "2025-07-15"
+lastmod: "2025-05-15"
+tags: ["ML", "security", "DevOps", "systems"]
+draft: false
+summary: "From reproducible builds to supply-chain provenance — here’s how to secure ML pipelines without slowing innovation."
+images: ["/static/images/sbom.webp"]
+---
+
+## Introduction
+
+Machine learning systems are now core infrastructure yet many are built like experiments.  
+Without discipline in CI/CD, *the same codebase can yield different models*, and provenance often disappears in the rush to ship.
+
+Hardening ML pipelines isn’t bureaucracy. It’s engineering hygiene — a quiet foundation for trust.
+
+---
+
+## Build Once, Trust Always
+
+![SBOM](/static/images/sbom.webp)
+
+### 1. Lock the Environment
+
+Use `pip-tools` or `conda-lock` to freeze dependencies.  
+Avoid “latest” tags — reproducibility starts with determinism.
+
+### 2. Pin the Data
+
+Treat datasets like code.  
+Store them in object storage with content hashes; version every change.
+
+### 3. Generate SBOMs
+
+An SBOM (Software Bill of Materials) lists every dependency used.  
+Tools like **Syft** automate this and ensure license and vulnerability compliance.
+
+### 4. Sign Everything
+
+Use **Cosign** or similar tools to sign artifacts, notebooks, and models.  
+SLSA-style attestations verify where and how each model was built.
+
+### 5. Principle of Least Privilege
+
+Short-lived OIDC tokens in CI replace static secrets.  
+Rotate aggressively and audit usage.
+
+![SBOM + provenance](/static/images/sbom.webp)
+
+---
+
+## Reflection
+
+Security and velocity are not opposites. They compound.  
+Teams that codify trust early ship faster — and sleep better.
+
+In a world where every model can influence decisions, reproducibility and provenance are no longer optional.  
+They are how **machine learning earns its reliability badge**.
